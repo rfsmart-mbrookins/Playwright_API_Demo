@@ -19,7 +19,7 @@ test('API Post Request', async ({ request }) => {
       ignoreHTTPSErrors: true,
       data: {
         "name": "Raghav",
-        "job": "Worst API Tutor Ever"
+        "job": "YouTube API Tutor"
       }
     });
   
@@ -35,7 +35,7 @@ test('API Post Request', async ({ request }) => {
         ignoreHTTPSErrors: true,
       data: {
         "name": "Raghav",
-        "job": "Worst API Tutor Ever"
+        "job": "YouTube API Tutor"
       }
     });
   
