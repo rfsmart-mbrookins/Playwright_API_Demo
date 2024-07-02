@@ -14,7 +14,7 @@ test.describe.parallel("API Tests", () => {
         userId: 11,
         id: 101,
         title: "Jenny's Number",
-        body: "Hey Jenny, Who saw your name and number on the wall. Jenny I've got your number. 867-5309."
+        body: "Hey Jenny I've got your number. 867-5309."
       }
     });
     expect(response.status()).toBe(201); // 201 is the correct status code for resource creation
