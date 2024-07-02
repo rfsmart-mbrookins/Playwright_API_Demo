@@ -3,21 +3,11 @@ import { test, expect } from '@playwright/test';
 // Test data
 const baseURL = "https://jsonplaceholder.typicode.com";
 
-// Describe test cases
+// Describer Container (Test Suite)
 test.describe.parallel("API Tests", () => {
 
-  // GET API Request
-  test('API GET Request', async ({ request }) => {
-    const response = await request.get(`${baseURL}/posts`, {
-      ignoreHTTPSErrors: true,
-    });
-    expect(response.status()).toBe(200);
-    const responseBody = await response.json();
-    console.log(responseBody);
-  });
-
-  // POST API Request
-  test.only('API POST Request', async ({ request }) => {
+   // POST API Request
+  test('API POST Request', async ({ request }) => {
     const response = await request.post(`${baseURL}/posts`, {
       ignoreHTTPSErrors: true,
       data: {
@@ -36,7 +26,23 @@ test.describe.parallel("API Tests", () => {
     console.log(jsonResponse);
   });
 
-  /////
-  
+   // GET API Request
+   test('API GET Request', async ({ request }) => {
+    const response = await request.get(`${baseURL}/posts`, {
+      ignoreHTTPSErrors: true,
+    });
+    expect(response.status()).toBe(200);
+    const responseBody = await response.json();
+    console.log(responseBody);
+
+    // Reverse Order
+    const reversedPosts = responseBody.reverse();
+    console.log('Reversed posts:', reversedPosts);
+    // Select Last 5 Posts
+    const last5Posts = responseBody.slice(-5);
+    console.log('Last 5 posts:', last5Posts);
+
+
+  });
 
 });
